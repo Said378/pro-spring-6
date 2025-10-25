@@ -1,4 +1,4 @@
-package apress.prospring6.ch05.aop.target;
+package apress.prospring6.aop.ch05.target;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

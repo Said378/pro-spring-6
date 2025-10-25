@@ -1,28 +1,20 @@
-package apress.prospring6.ch05.aop;
+package apress.prospring6.aop.ch05;
 
-import apress.prospring6.ch05.aop.advice.SimpleAroundAdvice;
-import apress.prospring6.ch05.aop.pointcut.SimpleDynamicPointCut;
-import apress.prospring6.ch05.aop.pointcut.SimpleStaticPointCut;
-import apress.prospring6.ch05.aop.target.GoodGuitarist;
-import apress.prospring6.ch05.aop.target.GreatGuitarist;
-import apress.prospring6.ch05.aop.target.Singer;
+import apress.prospring6.aop.ch05.advice.SimpleAroundAdvice;
+import apress.prospring6.aop.ch05.pointcut.SimpleStaticPointCut;
+import apress.prospring6.aop.ch05.target.GoodGuitarist;
+import apress.prospring6.aop.ch05.target.GreatGuitarist;
+import apress.prospring6.aop.ch05.target.Singer;
 import org.aopalliance.aop.Advice;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.Pointcut;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 
-
-public class SimplePointCutDemo {
+public class StaticPointCutDemo {
 
     public static void main(String[] args) {
 
-      //  staticPointCut();
-        dynamicPointCut();
-    }
-
-
-    public static void staticPointCut(){
         GoodGuitarist johnMayer = new GoodGuitarist();
         GreatGuitarist ericClapton = new GreatGuitarist();
 
@@ -49,22 +41,5 @@ public class SimplePointCutDemo {
 
         proxyOne.sign();
         proxyTwo.sign();
-    }
-
-    public static void dynamicPointCut(){
-        GoodGuitarist target = new GoodGuitarist();
-        Advisor advisor = new DefaultPointcutAdvisor(new SimpleDynamicPointCut(), new SimpleAroundAdvice());
-
-        ProxyFactory proxyFactory = new ProxyFactory();
-        proxyFactory.addAdvisor(advisor);
-        proxyFactory.setTarget(target);
-
-        Singer proxy = (Singer)  proxyFactory.getProxy();
-
-        proxy.sign("C");
-        proxy.sign("c");
-        proxy.sign("E");
-
-        proxy.sign();
     }
 }

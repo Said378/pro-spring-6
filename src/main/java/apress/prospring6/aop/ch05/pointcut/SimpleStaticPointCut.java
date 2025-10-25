@@ -1,6 +1,6 @@
-package apress.prospring6.ch05.aop.pointcut;
+package apress.prospring6.aop.ch05.pointcut;
 
-import apress.prospring6.ch05.aop.target.GoodGuitarist;
+import apress.prospring6.aop.ch05.target.GoodGuitarist;
 import org.springframework.aop.ClassFilter;
 import org.springframework.aop.support.StaticMethodMatcherPointcut;
 

@@ -1,4 +1,4 @@
-package apress.prospring6.ch05.aop.advice;
+package apress.prospring6.aop.ch05.advice;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
